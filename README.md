@@ -159,5 +159,15 @@ $ firebase serve
 
 ![1563007843687](assets/1563007843687.png)
 
+3. 개발 결과를 테스트하기 위해 build하기
 
+   - build란? 윈도우를 개발하여 개인 컴퓨터에 설치되어서 실행 되기까지의 단계 모두를 일컫는다.
+
+   `npm install`
+
+   `npm run build`
+
+   `npm install -g serve` : 서버를 글로벌로 설치
+
+   `serve -s dist` : 가상서버 실행
 
