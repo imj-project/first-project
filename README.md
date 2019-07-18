@@ -91,5 +91,83 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 3. 프로젝트 생성
 
 * [Vuetify 시작하기](https://vuetifyjs.com/ko/getting-started/quick-start)
-
 * `vue add vuetify` : vuetify를 사용하기 위한 plugin 설치
+
+
+
+
+
+## Firebase 연동
+
+> 개발에 집중할 수 있도록 웹 서비스를 만들기 위해서 필요한 서버 인프라, DB등을 제공한다.
+
+
+
+### 1. Firebase 사용하게 된 계기
+
+- Database, Storage, Auth, Analytics 등을 제공하기 때문에 서버 인프라를 고민할 필요 없이 개발에 집중할 수 있다.
+- Realtime Database를 활용하여 실시간 피드백이 가능하며 저장 용량도 소규모 프로젝트에서 사용하기에 적합하다.
+
+### 2. Firebase에서 사용할 기능
+
+- Database
+- Storage
+  - 사용자의 사진 및 동영상 저장
+- Hosting
+  - 프론트 엔드 기반 웹 서비스를 올릴 수 있는 서비스
+- Functions
+  - 서버단에서 처리하는 작업이 있을 때 사용, firebase 서비스와 백그라운드 트리거로 연동된다.
+- Firestore
+  - 글로벌 앱을 위해 구축된 NoSQL 데이터베이스
+
+### 3. Firebase-Project 연동 시작
+
+1. https://firebase.google.com 가입 및 project 생성
+
+   - project ID: `imj-first-project`
+   - web API key :  `AIzaSyCFYiYzNmXIylfkOoeODsQMq0LK5-0k-sM`
+   - web ID : `1:804273504480:web:4f34d7dbd37a9a80`
+   - **GCP 리소스 위치 선택** : `asia-northeast1`
+
+2. 로컬 웹 서버 구축
+
+> Node.js를 이용하여 개발용 로컬 웹 서버를 실행한다.
+
+```bash
+$ npm install firebase-tools -g
+```
+
+![1563007022447](assets/1563007022447.png)
+
+```bash
+$ firebase init
+```
+
+![1563007159856](assets/1563007159856.png)
+
+- 사용하기 원하는 feature를 선택하고 Enter(all)
+
+![1563007265668](assets/1563007265668.png)
+
+- 연결하기 원하는 firebase project 선택(imj-first-project)
+- 나머지는 setup에서는 파일 생성하고 y로 넘어가면 된다.
+
+```bash
+// 서버를 실행시켜보자.
+$ firebase serve
+```
+
+![1563007843687](assets/1563007843687.png)
+
+3. 개발 결과를 테스트하기 위해 build하기
+
+   - build란? 윈도우를 개발하여 개인 컴퓨터에 설치되어서 실행 되기까지의 단계 모두를 일컫는다.
+
+   `npm install`
+
+   `npm run build`
+
+   `npm install -g serve` : 서버를 글로벌로 설치
+
+   `serve -s dist` : 가상서버 실행
+
